@@ -20,7 +20,7 @@ const mockdata = [
   },
 ];
 
-export function FeaturesCards() {
+export default function FeaturesCards() {
   const theme = useMantineTheme();
   const features = mockdata.map((feature) => (
     <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
