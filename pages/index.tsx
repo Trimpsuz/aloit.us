@@ -1,4 +1,4 @@
-import { Title, Text, Card, SimpleGrid, Container, rem, Image, useMantineTheme } from '@mantine/core';
+import { Title, Text, Card, SimpleGrid, Container, rem, Image, Anchor } from '@mantine/core';
 import NextImage from 'next/image';
 import classes from './index.module.css';
 import nordea from '../public/nordea.svg';
@@ -58,6 +58,7 @@ const linksData = [
     alt: 'Nordea logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.nordea.fi/',
   },
   {
     title: 'OP',
@@ -65,6 +66,7 @@ const linksData = [
     alt: 'OP logo',
     width: 90,
     height: 90,
+    link: 'https://www.op.fi/',
   },
   {
     title: 'Danske Bank',
@@ -72,6 +74,7 @@ const linksData = [
     alt: 'Danske Bank logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.danskebank.fi/',
   },
   {
     title: 'POP Pankki',
@@ -79,6 +82,7 @@ const linksData = [
     alt: 'POP Pankki logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.poppankki.fi/',
   },
   {
     title: 'Säästöpankki',
@@ -86,6 +90,7 @@ const linksData = [
     alt: 'Säästöpankki logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.saastopankki.fi/',
   },
   {
     title: 'Aktia',
@@ -93,6 +98,7 @@ const linksData = [
     alt: 'Aktia logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.aktia.fi/',
   },
   {
     title: 'S-Pankki',
@@ -100,6 +106,7 @@ const linksData = [
     alt: 'S-Pankki logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.s-pankki.fi/',
   },
   {
     title: 'Lähitapiola',
@@ -107,6 +114,7 @@ const linksData = [
     alt: 'Lähitapiola logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.lahitapiola.fi/',
   },
   {
     title: 'Yle.fi',
@@ -114,6 +122,7 @@ const linksData = [
     alt: 'Yle logo',
     width: 90,
     height: 90,
+    link: 'https://www.yle.fi/',
   },
   {
     title: 'Iltalehti',
@@ -121,6 +130,7 @@ const linksData = [
     alt: 'Iltalehti logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.iltalehti.fi/',
   },
   {
     title: 'Ilta-Sanomat',
@@ -128,6 +138,7 @@ const linksData = [
     alt: 'Ilta-Sanomat logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.is.fi/',
   },
   {
     title: 'Ampparit',
@@ -135,6 +146,7 @@ const linksData = [
     alt: 'Ampparit logo',
     width: 90,
     height: 90,
+    link: 'https://www.ampparit.com/',
   },
   {
     title: 'MTV Uutiset',
@@ -142,6 +154,7 @@ const linksData = [
     alt: 'MTV Uutisetlogo',
     width: 90,
     height: 90,
+    link: 'https://www.mtvuutiset.fi/',
   },
   {
     title: 'Iltapulu',
@@ -149,6 +162,7 @@ const linksData = [
     alt: 'Iltapulu logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.iltapulu.fi/',
   },
   {
     title: 'Helsingin Sanomat',
@@ -156,6 +170,7 @@ const linksData = [
     alt: 'Helsingin Sanomat logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.hs.fi/',
   },
   {
     title: 'Keski-Uusimaa',
@@ -163,6 +178,7 @@ const linksData = [
     alt: 'Keski-Uusimaa logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.keski-uusimaa.fi/',
   },
   {
     title: 'Yle Areena',
@@ -170,6 +186,7 @@ const linksData = [
     alt: 'Yle Areena logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://areena.yle.fi/',
   },
   {
     title: 'MTV Katsomo',
@@ -177,6 +194,7 @@ const linksData = [
     alt: 'MTV Katsomo logo',
     width: 90,
     height: 90,
+    link: 'https://www.mtv.fi/',
   },
   {
     title: 'Netflix',
@@ -184,6 +202,7 @@ const linksData = [
     alt: 'Netflix logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.netflix.com/fi/',
   },
   {
     title: 'Ruutu',
@@ -191,6 +210,7 @@ const linksData = [
     alt: 'Ruutu logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.ruutu.fi/',
   },
   {
     title: 'Viaplay',
@@ -198,6 +218,7 @@ const linksData = [
     alt: 'Viaplay logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.viaplay.fi/',
   },
   {
     title: 'Suomi.fi',
@@ -205,6 +226,7 @@ const linksData = [
     alt: 'Suomi.fi logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.suomi.fi/',
   },
   {
     title: 'Poliisi',
@@ -212,6 +234,7 @@ const linksData = [
     alt: 'Poliisi logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.poliisi.fi/',
   },
   {
     title: 'TE-palvelut',
@@ -219,6 +242,7 @@ const linksData = [
     alt: 'TE logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://toimistot.te-palvelut.fi/',
   },
   {
     title: 'Kanta',
@@ -226,6 +250,7 @@ const linksData = [
     alt: 'Kanta logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.kanta.fi/',
   },
   {
     title: 'Yritys- ja yhteisötietojärjestelmä',
@@ -233,6 +258,7 @@ const linksData = [
     alt: 'YTJ logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.ytj.fi/',
   },
   {
     title: 'Väylävirasto',
@@ -240,6 +266,7 @@ const linksData = [
     alt: 'Väylävirasto logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.vayla.fi/',
   },
   {
     title: 'Traficom',
@@ -247,6 +274,7 @@ const linksData = [
     alt: 'Traficom logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.traficom.fi/',
   },
   {
     title: 'Vero',
@@ -254,6 +282,7 @@ const linksData = [
     alt: 'Vero logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.vero.fi/',
   },
   {
     title: 'Kela',
@@ -261,6 +290,7 @@ const linksData = [
     alt: 'Kela logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.kela.fi/',
   },
   {
     title: 'Tori',
@@ -268,6 +298,7 @@ const linksData = [
     alt: 'Tori logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.tori.fi/',
   },
   {
     title: 'Huuto.net',
@@ -275,6 +306,7 @@ const linksData = [
     alt: 'Huutonet logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.huuto.net/',
   },
   {
     title: 'Huutokaupat.com',
@@ -282,6 +314,7 @@ const linksData = [
     alt: 'Huutokaupat.com logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.huutokaupat.com/',
   },
   {
     title: 'Nettiauto',
@@ -289,6 +322,7 @@ const linksData = [
     alt: 'Nettiauto logo',
     width: 90,
     height: 90,
+    link: 'https://www.nettiauto.com/',
   },
   {
     title: 'Nettimoto',
@@ -296,6 +330,7 @@ const linksData = [
     alt: 'Nettimoto logo',
     width: 90,
     height: 90,
+    link: 'https://www.nettimoto.com/',
   },
   {
     title: 'Etuovi.com',
@@ -303,6 +338,7 @@ const linksData = [
     alt: 'Etuovi logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.etuovi.com/',
   },
   {
     title: 'Oikotie',
@@ -310,6 +346,7 @@ const linksData = [
     alt: 'Oikotie logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.oikotie.fi/',
   },
   {
     title: 'Ebay',
@@ -317,6 +354,7 @@ const linksData = [
     alt: 'Ebay logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.ebay.fi/',
   },
   {
     title: 'Gmail',
@@ -324,6 +362,7 @@ const linksData = [
     alt: 'Gmail logo',
     width: 90,
     height: 90,
+    link: 'https://mail.google.com/',
   },
   {
     title: 'Outlook',
@@ -331,6 +370,7 @@ const linksData = [
     alt: 'Outlook logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://outlook.office.com/',
   },
   {
     title: 'Google Drive',
@@ -338,6 +378,7 @@ const linksData = [
     alt: 'Google Drive logo',
     width: 90,
     height: 90,
+    link: 'https://drive.google.com/',
   },
   {
     title: 'YouTube',
@@ -345,6 +386,7 @@ const linksData = [
     alt: 'YouTube logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.youtube.com/',
   },
   {
     title: 'Instagram',
@@ -352,6 +394,7 @@ const linksData = [
     alt: 'Instagram logo',
     width: 90,
     height: 90,
+    link: 'https://www.instagram.com/',
   },
   {
     title: 'X (Twitter)',
@@ -359,6 +402,7 @@ const linksData = [
     alt: 'X logo',
     width: 90,
     height: 90,
+    link: 'https://x.com/',
   },
   {
     title: 'Facebook',
@@ -366,6 +410,7 @@ const linksData = [
     alt: 'Facebook logo',
     width: 90,
     height: 90,
+    link: 'https://www.facebook.com/',
   },
   {
     title: 'VR',
@@ -373,6 +418,7 @@ const linksData = [
     alt: 'VR logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.vr.fi/',
   },
   {
     title: 'Matkahuolto',
@@ -380,6 +426,7 @@ const linksData = [
     alt: 'Matkahuolto logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.matkahuolto.fi/',
   },
   {
     title: 'Posti',
@@ -387,6 +434,7 @@ const linksData = [
     alt: 'Posti logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.posti.fi/',
   },
   {
     title: 'HSL',
@@ -394,18 +442,20 @@ const linksData = [
     alt: 'HSL logo',
     width: 'auto',
     height: 'auto',
+    link: 'https://www.hsl.fi/',
   },
 ];
 
 export default function Index() {
-  const theme = useMantineTheme();
   const links = linksData.map((feature) => (
-    <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
-      <Image src={feature.icon} alt={feature.alt || ''} w={feature.width} h={feature.height} component={NextImage} />
-      <Text fz={rem(28)} fw={700} className={classes.cardTitle} mt="md">
-        {feature.title}
-      </Text>
-    </Card>
+    <Anchor underline="never" key={feature.link} href={feature.link}>
+      <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
+        <Image src={feature.icon} alt={feature.alt || ''} w={feature.width} h={feature.height} component={NextImage} />
+        <Text fz={rem(28)} fw={700} className={classes.cardTitle} mt="md">
+          {feature.title}
+        </Text>
+      </Card>
+    </Anchor>
   ));
 
   return (
