@@ -484,7 +484,7 @@ export default function Index() {
       <Title order={2} className={classes.title} ta="center" mt="sm" fz={rem(70)} fw={900}>
         aloit.us
       </Title>
-      <Text ta="center" fz={rem(28)}>
+      <Text ta="center" className={classes.description} fz={rem(28)}>
         {dayText}
       </Text>
       <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
