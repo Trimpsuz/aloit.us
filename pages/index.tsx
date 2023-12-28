@@ -1,5 +1,6 @@
 import { Title, Text, Card, SimpleGrid, Container, rem, Image, Anchor } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
+import Footer from '../components/Footer';
 import NextImage from 'next/image';
 import classes from './index.module.css';
 import nordea from '../public/nordea.svg';
@@ -480,16 +481,19 @@ export default function Index() {
   ));
 
   return (
-    <Container size="lg" py="xl">
-      <Title order={2} className={classes.title} ta="center" mt="sm" fz={rem(70)} fw={900}>
-        aloit.us
-      </Title>
-      <Text ta="center" className={classes.description} fz={rem(28)}>
-        {dayText}
-      </Text>
-      <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
-        {links}
-      </SimpleGrid>
-    </Container>
+    <>
+      <Container size="lg" py="xl">
+        <Title order={2} className={classes.title} ta="center" mt="sm" fz={rem(70)} fw={900}>
+          aloit.us
+        </Title>
+        <Text ta="center" className={classes.description} fz={rem(28)}>
+          {dayText}
+        </Text>
+        <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
+          {links}
+        </SimpleGrid>
+      </Container>{' '}
+      <Footer></Footer>
+    </>
   );
 }
