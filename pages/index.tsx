@@ -1,4 +1,5 @@
 import { Title, Text, Card, SimpleGrid, Container, rem, Image, Anchor } from '@mantine/core';
+import React, { useEffect, useState } from 'react';
 import NextImage from 'next/image';
 import classes from './index.module.css';
 import nordea from '../public/nordea.svg';
@@ -447,6 +448,26 @@ const linksData = [
 ];
 
 export default function Index() {
+  const [dayText, setDayText] = useState<string>('');
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const weekNumber = getWeekNumber(currentDate);
+    const formattedText = `${currentDate.toLocaleDateString('fi-FI', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).replace('na ', ' ')}, viikko ${weekNumber}`;
+    setDayText(formattedText);
+  }, []);
+
+  const getWeekNumber = (date: Date): number => {
+    const d = new Date(date);
+    d.setHours(0, 0, 0, 0);
+    d.setDate(d.getDate() + 4 - (d.getDay() || 7));
+
+    const yearStart = Number(new Date(d.getFullYear(), 0, 1).getTime());
+    const timeDiff = Number(d.getTime() - yearStart);
+
+    return Math.ceil((timeDiff / 86400000 + 1) / 7);
+  };
+
   const links = linksData.map((feature) => (
     <Anchor underline="never" key={feature.link} href={feature.link}>
       <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
@@ -463,7 +484,9 @@ export default function Index() {
       <Title order={2} className={classes.title} ta="center" mt="sm" fz={rem(70)} fw={900}>
         aloit.us
       </Title>
-
+      <Text ta="center" fz={rem(28)}>
+        {dayText}
+      </Text>
       <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
         {links}
       </SimpleGrid>
