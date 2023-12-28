@@ -451,7 +451,7 @@ export default function Index() {
     <Anchor underline="never" key={feature.link} href={feature.link}>
       <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
         <Image src={feature.icon} alt={feature.alt || ''} w={feature.width} h={feature.height} component={NextImage} />
-        <Text fz={rem(28)} fw={700} className={classes.cardTitle} mt="md">
+        <Text fz={rem(28)} fw={600} className={classes.cardTitle} mt="md">
           {feature.title}
         </Text>
       </Card>
@@ -460,7 +460,7 @@ export default function Index() {
 
   return (
     <Container size="lg" py="xl">
-      <Title order={2} className={classes.title} ta="center" mt="sm">
+      <Title order={2} className={classes.title} ta="center" mt="sm" fz={rem(70)} fw={900}>
         aloit.us
       </Title>
 
