@@ -53,8 +53,19 @@ import matkahuolto from '../public/matkahuolto.svg';
 import posti from '../public/posti.svg';
 import hsl from '../public/hsl.png';
 
+interface Link {
+  id: number;
+  title: string;
+  icon: any;
+  alt: string;
+  width: string | number;
+  height: string | number;
+  link: string;
+}
+
 const linksData = [
   {
+    id: 0,
     title: 'Nordea',
     icon: nordea,
     alt: 'Nordea logo',
@@ -63,6 +74,7 @@ const linksData = [
     link: 'https://www.nordea.fi/',
   },
   {
+    id: 1,
     title: 'OP',
     icon: op,
     alt: 'OP logo',
@@ -71,6 +83,7 @@ const linksData = [
     link: 'https://www.op.fi/',
   },
   {
+    id: 2,
     title: 'Danske Bank',
     icon: danskeBank,
     alt: 'Danske Bank logo',
@@ -79,6 +92,7 @@ const linksData = [
     link: 'https://www.danskebank.fi/',
   },
   {
+    id: 3,
     title: 'POP Pankki',
     icon: pop,
     alt: 'POP Pankki logo',
@@ -87,6 +101,7 @@ const linksData = [
     link: 'https://www.poppankki.fi/',
   },
   {
+    id: 4,
     title: 'Säästöpankki',
     icon: sp,
     alt: 'Säästöpankki logo',
@@ -95,6 +110,7 @@ const linksData = [
     link: 'https://www.saastopankki.fi/',
   },
   {
+    id: 5,
     title: 'Aktia',
     icon: aktia,
     alt: 'Aktia logo',
@@ -103,6 +119,7 @@ const linksData = [
     link: 'https://www.aktia.fi/',
   },
   {
+    id: 6,
     title: 'S-Pankki',
     icon: sPankki,
     alt: 'S-Pankki logo',
@@ -111,6 +128,7 @@ const linksData = [
     link: 'https://www.s-pankki.fi/',
   },
   {
+    id: 7,
     title: 'Lähitapiola',
     icon: lahitapiola,
     alt: 'Lähitapiola logo',
@@ -119,6 +137,7 @@ const linksData = [
     link: 'https://www.lahitapiola.fi/',
   },
   {
+    id: 8,
     title: 'Yle.fi',
     icon: yle,
     alt: 'Yle logo',
@@ -127,6 +146,7 @@ const linksData = [
     link: 'https://www.yle.fi/',
   },
   {
+    id: 9,
     title: 'Iltalehti',
     icon: iltalehti,
     alt: 'Iltalehti logo',
@@ -135,6 +155,7 @@ const linksData = [
     link: 'https://www.iltalehti.fi/',
   },
   {
+    id: 10,
     title: 'Ilta-Sanomat',
     icon: iltaSanomat,
     alt: 'Ilta-Sanomat logo',
@@ -143,6 +164,7 @@ const linksData = [
     link: 'https://www.is.fi/',
   },
   {
+    id: 11,
     title: 'Ampparit',
     icon: ampparit,
     alt: 'Ampparit logo',
@@ -151,6 +173,7 @@ const linksData = [
     link: 'https://www.ampparit.com/',
   },
   {
+    id: 12,
     title: 'MTV Uutiset',
     icon: mtv,
     alt: 'MTV Uutisetlogo',
@@ -159,6 +182,7 @@ const linksData = [
     link: 'https://www.mtvuutiset.fi/',
   },
   {
+    id: 13,
     title: 'Iltapulu',
     icon: iltapulu,
     alt: 'Iltapulu logo',
@@ -167,6 +191,7 @@ const linksData = [
     link: 'https://www.iltapulu.fi/',
   },
   {
+    id: 14,
     title: 'Helsingin Sanomat',
     icon: hs,
     alt: 'Helsingin Sanomat logo',
@@ -175,6 +200,7 @@ const linksData = [
     link: 'https://www.hs.fi/',
   },
   {
+    id: 15,
     title: 'Keski-Uusimaa',
     icon: keskiUusimaa,
     alt: 'Keski-Uusimaa logo',
@@ -183,6 +209,7 @@ const linksData = [
     link: 'https://www.keski-uusimaa.fi/',
   },
   {
+    id: 16,
     title: 'Yle Areena',
     icon: yleAreena,
     alt: 'Yle Areena logo',
@@ -191,6 +218,7 @@ const linksData = [
     link: 'https://areena.yle.fi/',
   },
   {
+    id: 17,
     title: 'MTV Katsomo',
     icon: mtvKatsomo,
     alt: 'MTV Katsomo logo',
@@ -199,6 +227,7 @@ const linksData = [
     link: 'https://www.mtv.fi/',
   },
   {
+    id: 18,
     title: 'Netflix',
     icon: netflix,
     alt: 'Netflix logo',
@@ -207,6 +236,7 @@ const linksData = [
     link: 'https://www.netflix.com/fi/',
   },
   {
+    id: 19,
     title: 'Ruutu',
     icon: ruutu,
     alt: 'Ruutu logo',
@@ -215,6 +245,7 @@ const linksData = [
     link: 'https://www.ruutu.fi/',
   },
   {
+    id: 20,
     title: 'Viaplay',
     icon: viaplay,
     alt: 'Viaplay logo',
@@ -223,6 +254,7 @@ const linksData = [
     link: 'https://www.viaplay.fi/',
   },
   {
+    id: 21,
     title: 'Suomi.fi',
     icon: suomifi,
     alt: 'Suomi.fi logo',
@@ -231,6 +263,7 @@ const linksData = [
     link: 'https://www.suomi.fi/',
   },
   {
+    id: 22,
     title: 'Poliisi',
     icon: poliisi,
     alt: 'Poliisi logo',
@@ -239,6 +272,7 @@ const linksData = [
     link: 'https://www.poliisi.fi/',
   },
   {
+    id: 23,
     title: 'TE-palvelut',
     icon: te,
     alt: 'TE logo',
@@ -247,6 +281,7 @@ const linksData = [
     link: 'https://toimistot.te-palvelut.fi/',
   },
   {
+    id: 24,
     title: 'Kanta',
     icon: kanta,
     alt: 'Kanta logo',
@@ -255,6 +290,7 @@ const linksData = [
     link: 'https://www.kanta.fi/',
   },
   {
+    id: 25,
     title: 'Yritys- ja yhteisötietojärjestelmä',
     icon: ytj,
     alt: 'YTJ logo',
@@ -263,6 +299,7 @@ const linksData = [
     link: 'https://www.ytj.fi/',
   },
   {
+    id: 26,
     title: 'Väylävirasto',
     icon: vayla,
     alt: 'Väylävirasto logo',
@@ -271,6 +308,7 @@ const linksData = [
     link: 'https://www.vayla.fi/',
   },
   {
+    id: 27,
     title: 'Traficom',
     icon: traficom,
     alt: 'Traficom logo',
@@ -279,6 +317,7 @@ const linksData = [
     link: 'https://www.traficom.fi/',
   },
   {
+    id: 28,
     title: 'Vero',
     icon: vero,
     alt: 'Vero logo',
@@ -287,6 +326,7 @@ const linksData = [
     link: 'https://www.vero.fi/',
   },
   {
+    id: 29,
     title: 'Kela',
     icon: kela,
     alt: 'Kela logo',
@@ -295,6 +335,7 @@ const linksData = [
     link: 'https://www.kela.fi/',
   },
   {
+    id: 30,
     title: 'Tori',
     icon: tori,
     alt: 'Tori logo',
@@ -303,6 +344,7 @@ const linksData = [
     link: 'https://www.tori.fi/',
   },
   {
+    id: 31,
     title: 'Huuto.net',
     icon: huutonet,
     alt: 'Huutonet logo',
@@ -311,6 +353,7 @@ const linksData = [
     link: 'https://www.huuto.net/',
   },
   {
+    id: 32,
     title: 'Huutokaupat.com',
     icon: huutokaupatcom,
     alt: 'Huutokaupat.com logo',
@@ -319,6 +362,7 @@ const linksData = [
     link: 'https://www.huutokaupat.com/',
   },
   {
+    id: 33,
     title: 'Nettiauto',
     icon: nettiauto,
     alt: 'Nettiauto logo',
@@ -327,6 +371,7 @@ const linksData = [
     link: 'https://www.nettiauto.com/',
   },
   {
+    id: 34,
     title: 'Nettimoto',
     icon: nettimoto,
     alt: 'Nettimoto logo',
@@ -335,6 +380,7 @@ const linksData = [
     link: 'https://www.nettimoto.com/',
   },
   {
+    id: 35,
     title: 'Etuovi.com',
     icon: etuovi,
     alt: 'Etuovi logo',
@@ -343,6 +389,7 @@ const linksData = [
     link: 'https://www.etuovi.com/',
   },
   {
+    id: 36,
     title: 'Oikotie',
     icon: oikotie,
     alt: 'Oikotie logo',
@@ -351,6 +398,7 @@ const linksData = [
     link: 'https://www.oikotie.fi/',
   },
   {
+    id: 37,
     title: 'Ebay',
     icon: ebay,
     alt: 'Ebay logo',
@@ -359,6 +407,7 @@ const linksData = [
     link: 'https://www.ebay.fi/',
   },
   {
+    id: 38,
     title: 'Gmail',
     icon: gmail,
     alt: 'Gmail logo',
@@ -367,6 +416,7 @@ const linksData = [
     link: 'https://mail.google.com/',
   },
   {
+    id: 39,
     title: 'Outlook',
     icon: outlook,
     alt: 'Outlook logo',
@@ -375,6 +425,7 @@ const linksData = [
     link: 'https://outlook.office.com/',
   },
   {
+    id: 40,
     title: 'Google Drive',
     icon: gdrive,
     alt: 'Google Drive logo',
@@ -383,6 +434,7 @@ const linksData = [
     link: 'https://drive.google.com/',
   },
   {
+    id: 41,
     title: 'YouTube',
     icon: youtube,
     alt: 'YouTube logo',
@@ -391,6 +443,7 @@ const linksData = [
     link: 'https://www.youtube.com/',
   },
   {
+    id: 42,
     title: 'Instagram',
     icon: instagram,
     alt: 'Instagram logo',
@@ -399,6 +452,7 @@ const linksData = [
     link: 'https://www.instagram.com/',
   },
   {
+    id: 43,
     title: 'X (Twitter)',
     icon: x,
     alt: 'X logo',
@@ -407,6 +461,7 @@ const linksData = [
     link: 'https://x.com/',
   },
   {
+    id: 44,
     title: 'Facebook',
     icon: facebook,
     alt: 'Facebook logo',
@@ -415,6 +470,7 @@ const linksData = [
     link: 'https://www.facebook.com/',
   },
   {
+    id: 45,
     title: 'VR',
     icon: vr,
     alt: 'VR logo',
@@ -423,6 +479,7 @@ const linksData = [
     link: 'https://www.vr.fi/',
   },
   {
+    id: 46,
     title: 'Matkahuolto',
     icon: matkahuolto,
     alt: 'Matkahuolto logo',
@@ -431,6 +488,7 @@ const linksData = [
     link: 'https://www.matkahuolto.fi/',
   },
   {
+    id: 47,
     title: 'Posti',
     icon: posti,
     alt: 'Posti logo',
@@ -439,6 +497,7 @@ const linksData = [
     link: 'https://www.posti.fi/',
   },
   {
+    id: 48,
     title: 'HSL',
     icon: hsl,
     alt: 'HSL logo',
@@ -450,6 +509,7 @@ const linksData = [
 
 export default function Index() {
   const [dayText, setDayText] = useState<string>('');
+  const [sortedLinks, setSortedLinks] = useState<Link[]>([]);
 
   useEffect(() => {
     const currentDate = new Date();
@@ -469,8 +529,24 @@ export default function Index() {
     return Math.ceil((timeDiff / 86400000 + 1) / 7);
   };
 
-  const links = linksData.map((feature) => (
-    <Anchor underline="never" key={feature.link} href={feature.link}>
+  useEffect(() => {
+    const sorted = linksData.sort((a, b) => {
+      const countA = localStorage.getItem(`clickCount_${a.id}`) || 0;
+      const countB = localStorage.getItem(`clickCount_${b.id}`) || 0;
+      return +countB - +countA;
+    });
+
+    setSortedLinks(sorted);
+  }, []);
+
+  const handleClick = (id: number) => {
+    const storedCount = localStorage.getItem(`clickCount_${id}`);
+    const count = (storedCount ? +storedCount : 0) + 1;
+    localStorage.setItem(`clickCount_${id}`, count.toString());
+  };
+
+  const links = sortedLinks.map((feature) => (
+    <Anchor underline="never" key={feature.link} href={feature.link} onClick={() => handleClick(feature.id)}>
       <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
         <Image src={feature.icon} alt={feature.alt || ''} w={feature.width} h={feature.height} component={NextImage} />
         <Text fz={rem(28)} fw={600} className={classes.cardTitle} mt="md">
